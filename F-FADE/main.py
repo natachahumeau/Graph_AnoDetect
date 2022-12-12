@@ -13,7 +13,7 @@ if __name__ == '__main__':
   if not os.path.exists(args.model_dir):
     os.mkdir(args.model_dir)
 
-  with open(args.model_dir + 'arg_list2.txt', 'w') as file:
+  with open(args.model_dir + 'arg_list.txt', 'w') as file:
     json.dump(args.__dict__, file, indent=2)
 
   dataset = Dataset(args.dataset)
@@ -23,7 +23,7 @@ if __name__ == '__main__':
 
   F_FADE = F_FADE(model, dataset, args.t_setup, args.W_upd, args.alpha, args.M, args.T_th, args.epochs, args.online_train_steps, args.batch_size, device)
 
-  np.savetxt(args.model_dir + 'score2.txt', np.array(F_FADE).reshape((-1, 1)))
+  np.savetxt(args.model_dir + 'score.txt', np.array(F_FADE).reshape((-1, 1)))
 
   F_FADE = np.array(F_FADE)
 
@@ -36,5 +36,5 @@ if __name__ == '__main__':
   AUC = metrics.auc(fpr, tpr)
   print("AUC: {}".format(AUC))
 
-  with open(args.model_dir + 'AUC2.txt', 'w') as file:
+  with open(args.model_dir + 'AUC.txt', 'w') as file:
     file.write(json.dumps(AUC))
