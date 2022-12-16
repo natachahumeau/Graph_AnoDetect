@@ -1,5 +1,5 @@
 
-#Comment lancer AnomRank ? 
+##### Comment lancer AnomRank ? #####
 
 - Ouvrir le fichier run.sh : 
     Il est constitué de 2 lignes : 
@@ -13,7 +13,10 @@
 
 - En sortie, un fichier .txt a été créé pour regrouper les résultats
 
-#Description de la deuxième ligne du fichier run.sh : 
+
+
+
+##### Description de la deuxième ligne du fichier run.sh : #####
 
 Rappel : "./anomrank "darpa.txt" " " 60 256 0 50 70"
 
@@ -51,7 +54,9 @@ et on ne souhaite pas ajouter d'anomalies (0),
 donc les valeurs 50 et 70 sont choisies au hasard.
 
 
-# Revenons sur timeStep et initSS : 
+
+
+##### Revenons sur timeStep et initSS : #####
 
 Ces paramètres permettent de définir le nombre de données qui vont être testées 
 par anomRank.
@@ -63,7 +68,9 @@ Avec :
   
 
 
-# Quels sont les fichiers ?
+
+
+##### Quels sont les fichiers ? #####
 
 - accuracy.cpp : il calcule la précision de l'algorithme (precision, recall, 
   false positive etc.)
@@ -80,10 +87,5 @@ Avec :
   
 - read_data.cpp : Il permet de lire les données du dataset pour ensuite 
   pouvoir travailler dessus
-
-
-
-
-
 
 
