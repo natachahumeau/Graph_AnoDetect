@@ -32,9 +32,9 @@ int main(int argc, char* argv[]) {
 	//const auto pathData = SOLUTION_DIR"data/DARPA/darpa.csv";
 	//const auto pathLabel = SOLUTION_DIR"data/DARPA/darpa_ground_truth.csv";
 
-	const auto pathMeta = SOLUTION_DIR"data/DARPA/dataset_shape.txt";
-	const auto pathData = SOLUTION_DIR"data/DARPA/dataset_processed.csv";
-	const auto pathLabel = SOLUTION_DIR"data/DARPA/dataset_ground_truth.csv";
+	const auto pathMeta = SOLUTION_DIR"data/UCI/dataset_shape.txt";
+	const auto pathData = SOLUTION_DIR"data/UCI/dataset_processed.csv";
+	const auto pathLabel = SOLUTION_DIR"data/UCI/dataset_ground_truth.csv";
 
 	// Random seed
 	// --------------------------------------------------------------------------------
@@ -92,12 +92,13 @@ int main(int argc, char* argv[]) {
 	// Write output scores
 	// --------------------------------------------------------------------------------
 
-	const auto pathScore = SOLUTION_DIR"temp/Score.txt";
+	//const auto pathScore = SOLUTION_DIR"temp/Score_DARPA.txt";
+	const auto pathScore = SOLUTION_DIR"temp/Score_UCI.txt";
 	const auto fileScore = fopen(pathScore, "w");
 	for (int i = 0; i < n; i++)
 	fprintf(fileScore, "%f\n", score[i]);
 	fclose(fileScore);
-	printf("// Raw anomaly scores are exported to\n// " SOLUTION_DIR"temp/Score2.txt\n");
+	printf("// Raw anomaly scores are exported to %s\n// ", pathScore,"\n");
 
 	// Evaluate scores
 	// --------------------------------------------------------------------------------
